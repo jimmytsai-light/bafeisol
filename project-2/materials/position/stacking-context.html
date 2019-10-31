@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>stacking-context</title>
+  <style>
+    /*
+    Summary:
+    1. 如果要比較堆疊順序的元素，彼此之間不是兄弟節點 (sibling) 的關係，那就不能只用z-index做判斷，在這種複雜的狀況下，若要精準地判斷元素堆疊的順序，就必須要將stacking context納入考量。
+
+    2. 那到底什麼是stacking context呢？ stacking context是一個獨立而封閉的環境，這個環境會決定其內部元素的堆疊順序（聽起來很抽象，請大家先忍耐一下，晚點看DEMO就會懂了）。另外，stacking context的中文翻作"堆疊環境"。那元素在哪些情況下，會產生堆疊環境呢？其實會產生堆疊環境的元素，有很多種，我們只講本課程會碰到的3種元素：
+      (1) 整份HTML的根元素，也就是<html>，它的內部會產生堆疊環境。
+      (2) position為fixed或sticky的元素，它的內部會產生堆疊環境。
+      (3) position為absolute或relative，而且"z-index不為auto"的元素，它的內部也會產生堆疊環境。
+    其他會產生stacking context的情況，請參考：
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+
+    3. 對於position為absolute或relative的元素來說，z-index設為0可以產生堆疊環境，但設為auto就不行，這就是auto和0最大的差別。
+
+    4. 當我們說b元素落在a元素的堆疊環境中，意思是指a元素是b元素的"有建立堆疊環境"的祖先元素中，離b最近的那個祖先元素。示意圖如下：(英文字母只是代稱，非真實標籤名稱)
+    <m>
+      <n 有建立堆疊環境>
+        <o>
+          <a 有建立堆疊環境>
+            <y>
+              <b>
+                <f></f>
+              </b>
+              <c>
+                <k></k>
+              </c>
+            </y>
+          </a>
+        </o>
+      </n>
+    </m>
+
+    5. 簡單來說，瀏覽器判斷元素堆疊的真正原則，其實是這樣的：
+       (1) 唯有落在同一個 堆疊環境 (stacking context)的元素們，彼此之間才能用各自的z-index來直接決定堆疊順序。
+       (2) 元素的z-index不論設為多少，都不會讓元素被它所在的堆疊環境覆蓋。
+       (3) 假設有多個元素都落在同一個堆疊環境，我們從這些元素中隨便挑兩個，一個元素叫做b，另一個元素叫做c，假設b和c各自都有建立自己的堆疊環境，而且b疊在c的上面，則b本身以及b的所有後代元素，都會疊在c以及c的所有後代元素上面。(元素b一人得道，其後代子孫雞犬升天)。每個堆疊環境就像一個獨立的小生態系，其內部覆蓋的狀況不會受另一個堆疊環境的影響。
+
+       舉例：假設元素b和c都落在a元素的堆疊環境中，且b和c都有定位，則
+         (a) 元素b和c可以直接用各自的z-index的大小，來決定堆疊順序(若z-index值一樣，就用HTML程式碼中的順序來決定堆疊順序)。
+         (b) 假設是元素b蓋在元素c的上面，且b和c都有各自建立堆疊環境，則b本身以及b的所有後代元素，都會疊在c以及c的後代元素上面。
+
+    6. 從第5點和相關的DEMO，我們可以歸納出一個最終的判斷規則，就是若你要決定網頁中任意兩個元素的堆疊順序，那你只要做3個步驟：
+      (1) 將有產生堆疊環境的元素的z-index看成版本號，一路從根元素編號到那兩個目標元素的身上。
+      (2) 尋找這兩個版本號的分歧點
+      (3) 若分歧點的版號不一樣，則版號比較大的，就會疊在上面。若分歧點的版號一樣，則以HTML程式碼的順序決定堆疊順序。
+
+    */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header, div {
+      width: 250px;
+      height: 150px;
+    }
+
+    h1, p {
+      width: 200px;
+      height: 100px;
+    }
+    
+    header {
+      position: fixed;
+      z-index: 2;
+      top: 80px;
+      left: 120px;
+      background: gold;
+    }
+
+    h1 {
+      position: fixed;
+      z-index: 0;
+      top: 110px;
+      left: 150px;
+      background: aqua;
+    }
+
+    div {
+      position: relative;
+      z-index: 1;
+      top: 140px;
+      left: 180px;
+      background: limegreen;
+    }
+
+    p {
+      position: fixed;
+      z-index: 3;
+      top: 170px;
+      left: 210px;
+      background: violet;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- <h1></h1> -->
+  </header>
+  <div>
+    <!-- <p></p> -->
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

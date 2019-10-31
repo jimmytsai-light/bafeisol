@@ -1,0 +1,250 @@
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f4f4;
+  color: #57585a;
+}
+
+body, input, button {
+  font-weight: 300;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+nav ul li, input, button {
+  font-size: 18px;
+}
+
+h1, nav ul li {
+  line-height: 38px;
+  height: 38px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+input {
+  border: 1px solid #999;
+  padding: 8px;
+  width: 220px;
+  color: #57585a;
+}
+
+button {
+  background: #e91e63;
+  color: #fff;
+  border: 0;
+  width: 56px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ed467f;
+}
+
+input, button {
+  height: 38px;
+  border-radius: 2px;
+}
+
+/* hover: 滑鼠位於在元件上方 */
+/* active: 滑鼠按下(mousedown)元件但還沒放開(mouseup) */
+/* 
+   focus: 滑鼠點擊了元件但還沒去點別的元件,
+          此時原本被點的元件會處於focus狀態,
+          直到滑鼠點了別的元件為止
+ */
+/* visited: 只對a link有用 */
+input:focus, button:focus {
+  outline: 0; /* 把focus時原本會有藍色的暈開的外框拿掉 */
+}
+
+header {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+header input {
+  border-radius: 2px 0 0 2px;
+  border-right: none;
+}
+
+header button {
+  border-radius: 0 2px 2px 0;
+}
+
+.sh-lg {
+  /* lg = large */
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.pdvt-12 {
+  /* vt = vertical (top + bottom) */
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.pdlt-20 {
+  padding-left: 20px;
+}
+
+.mgvt-12 {
+  /* vt = vertical (top + bottom) */
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.mghr-20 {
+  /* hr = horizontal (left + right) */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.mglt-20 {
+  margin-left: 20px;
+}
+
+.sk-1st > [class*="mglt-"]:nth-child(1) {
+  /* sk-1st = skip 1st child */
+  margin-left: 0;
+}
+
+.right {
+  float: right;
+}
+
+.left, .row {
+  float: left;
+}
+
+.row {
+  width: 100%;
+}
+
+@media screen and (max-width: 414px) {
+  /* iPhone 6/7/8 & plus, Pixel, Galaxy S5 */
+  [class *= "col-"] {
+    width: 100%;
+  }
+
+  .mobile-row {
+    float: left;
+    width: 100%;
+  }
+
+  .mobile-mgtp-12 {
+    margin-top: 12px;
+  }
+
+  .mobile-mglt-5 {
+    margin-left: 5px;
+  }
+
+  .mobile-mgrt-10 {
+    margin-right: 10px;
+  }
+
+  .mobile-mghr-10 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .mobile-pdlt-10 {
+    padding-left: 10px;
+  }
+
+  .mobile-wd-170 {
+    width: 170px;
+  }
+
+  .mobile-ftsz-20 {
+    font-size: 20px;
+  }
+
+  nav {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
+  }
+
+  nav.active {
+    height: 62px;
+    overflow: auto;
+    transition: height 0.3s;
+    border-top: 1px solid #eeeeee;
+  }
+
+  #mobile-menu-button {
+    display: block;
+    position: relative;
+    width: 38px;
+    height: 38px;
+  }
+
+  #mobile-menu-button span, #mobile-menu-button:before, #mobile-menu-button:after{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #57585a;
+  }
+
+  #mobile-menu-button span {
+    transition: all 0.3s ease-out;
+    top: 49%;
+  }
+
+  #mobile-menu-button:before, #mobile-menu-button:after {
+    transition: all 0.3s ease-out;
+    content: ' ';
+  }
+
+  #mobile-menu-button:before {
+    top: 25%;
+  }
+
+  #mobile-menu-button:after {
+    bottom: 25%;
+  }
+
+  #mobile-menu-button.active span {
+    transition: all 0.3s ease-out;
+    width: 0;
+    
+  }
+
+  #mobile-menu-button.active:before {
+    transition: all 0.3s ease-out;
+    width: 100%;
+    top: 49%;
+    transform: rotate(45deg);
+  }
+
+  #mobile-menu-button.active:after {
+    transition: all 0.3s ease-out;
+    width: 100%;
+    bottom: 47%;
+    transform: rotate(-46deg);
+  }
+}

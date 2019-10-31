@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>position-relative</title>
+  <style>
+    /*
+    Summary:
+    1. position為relative的元素，會以自己原本的位置作為基準，來進行定位。所謂"原本的位置"，指的是"還沒設定position前"的位置 (也就是由flow決定的位置)。
+
+    2. position為relative的元素，不會脫離flow。它的位置仍會受其他"無定位"元素的影響。
+
+    3. 其餘關於top、left、bottom、和right的設定邏輯，以及元素重疊時的覆蓋邏輯，都和position為fixed的時候雷同，不再贅述。
+
+    */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      padding: 60px 0 0 80px;
+    }
+    div, h1, p {
+      width: 200px;
+      height: 100px;
+    }
+    div {
+      background: limegreen;
+    }
+    h1 {
+      background: gold;
+      /*position: relative;*/
+      /*top: 20px;*/
+      /*left: 40px;*/
+      /*bottom: 30px;*/
+      /*right: 50px;*/
+    }
+    p {
+      background: violet;
+      /*position: relative;*/
+      /*bottom: 60px;*/
+      /*right: 80px;*/
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <h1></h1>
+  <p></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

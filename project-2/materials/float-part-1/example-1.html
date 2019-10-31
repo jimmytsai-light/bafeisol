@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>範例1</title>
+  <style>
+    /*
+    在上個講座中，我們看到了float對元素的display的影響，
+    那我們將這些影響整理成下面幾點，讓大家複習一下:
+    一旦將block，inline，和inline-block元素設定為float狀態，則
+    1. 它們的display會被強迫設定成一種"特別的block"狀態。
+       這邊的"block"指的是可以設定width和height，而"特別"這兩字指的是，相鄰的兩個float元素彼此之間不會斷行，並且會沿著水平方向靠在一起 (除非瀏覽器視窗的寬度不夠)
+       至於display為其他值的元素，請參考：
+       https://developer.mozilla.org/en-US/docs/Web/CSS/float
+    
+    2. 它們的寬度(width)預設會變成和內容一樣寬，
+       高度(height)預設會變成和內容一樣高。
+    
+    3. 對它們額外設定width和height，會有作用 (因為display是"特別的block")。
+    
+    4. 對它們額外設定display，不會有作用。
+
+    另外，若母元素沒有處於float狀態而且母元素預設的高度為auto時
+    (auto指的是交給內容決定)，那麼在計算母元素的高度時，
+    不會將處於float狀態的子元素納入高度計算。
+
+    接下來我們將被設定為"float:left"或"float:right"的元素，簡稱float元素;
+     */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    div { /* Chrome對<div>預設的display是block */
+      background: pink;
+      /*float: left;*/
+    }
+    input { /* Chrome對<input>預設的display是inline-block */
+      background: lime;
+      /*float: left;*/
+    }
+    button { /* Chrome對<button>預設的display是inline-block */
+      background: aqua;
+      /*float: left;*/
+    }
+    span { /* Chrome對<span>預設的display是inline */
+      background: yellow;
+      /*float: left;*/
+      width: 200px;
+      height: 80px;
+      /*display: inline;*/
+    }
+    /*
+      Quiz 1. 在<span>的"float:left"被打開的狀況下，請猜猜看，此時再設定display為inline會有用嗎？
+     */
+  </style>
+</head>
+<body>
+  <!-- <div>I am div</div> -->
+
+  <!--
+  <input type="text" placeholder="I am input" />
+  <button type="button">I am button</button>
+  -->
+
+  <!-- <span>I am span</span> -->
+  
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>光速買</title>
+  <style>
+    * {
+      font-family: sans-serif;
+    }
+    body {
+      text-align: center;
+      background: url('imgs/top-bg.jpg');
+      background-size: cover;
+      color: white;
+    }
+    h1 {
+      font-size: 60px;
+      margin: 80px 0 0 0;
+    }
+    p {
+      font-size: 30px;
+      margin: 30px 0 0 0;
+    }
+    input {
+      font-size: 18px;
+      margin: 20px 0 0 0;
+      border: 0;
+      padding: 10px;
+    }
+    input[type="button"] {
+      background: rgb(233, 30, 99);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>光速買</h1>
+  <p><strike>買到想剁⼿</strike>，<i>全館商品下殺5折中</i>！</p>
+  <input type="text" placeholder="請輸入您的email">
+  <input type="button" value="訂閱">
+  <script>
+    var button = document.querySelector('input[type="button"]')
+    function notice(e) { alert('已將商品型錄寄⾄您的信箱。') }
+    button.addEventListener('click', notice)
+  </script>
+</body>
+</html>

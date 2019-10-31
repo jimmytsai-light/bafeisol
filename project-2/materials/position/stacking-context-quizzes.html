@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>stacking-context-quizzes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .ps-rel {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+
+    .ps-abs {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .ps-fix {
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    .tl-50 {
+      top: 50px;
+      left: 50px;
+    }
+
+    .z1 {
+      z-index: 1;
+    }
+
+    .z2 {
+      z-index: 2;
+    }
+
+    .rec {
+      width: 200px;
+      height: 150px;
+    }
+
+    .bg-yellow {
+      background: gold;
+    }
+
+    .bg-green {
+      background: limegreen;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="ps-fix">
+      <div class="ps-rel z2">
+        <div class="ps-abs z1">
+          <div class="ps-abs z1">
+            <div class="ps-abs z1 rec bg-yellow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="ps-rel z1">
+        <div class="ps-abs z2">
+          <div class="ps-abs">
+            <div class="ps-abs z2 rec bg-green tl-50"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

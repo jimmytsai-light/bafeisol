@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <%- include('partials/head.ejs') %>
+  <body>
+    <%- include('partials/header.ejs') %>
+    <main class="row mgtp-62">
+      <% if (theme) { %>
+      <%- include('partials/theme.ejs') %>
+      <% } %>
+      <% if (promotion) { %>
+      <%- include('partials/promotion.ejs') %>
+      <% } %>
+      <%- include('partials/products.ejs') %>
+    </main>
+    <script src="js/nav.js"></script>
+    <% if (user) { %>
+    <%- include('partials/script.ejs') %>
+    <script src="js/request.js"></script>
+    <script src="js/order.js"></script>
+    <% } %>
+  </body>
+</html>

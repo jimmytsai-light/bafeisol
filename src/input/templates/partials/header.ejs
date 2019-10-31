@@ -1,0 +1,93 @@
+<header class="row sh-lg">
+  <form class="left pdvt-12 pdlt-20 mobile-pdlt-10" method="get" action="search">
+    <h1 class="left mobile-ftsz-20">
+      <$ if ([2, 3].includes(prj)) { $>
+        <% if (user) { %>
+      <a href="index-loggedin.html">光速買</a>
+        <% } else { %>
+      <a href="index.html">光速買</a>
+        <% } %>
+      <$ } else if ([4, 5, 6].includes(prj)) { $>
+      <a href="/">光速買</a>
+      <$ } $>
+    </h1>
+    <input
+      class="left mglt-20 mobile-mglt-5 mobile-wd-170"
+      type="text"
+      name="q"
+      placeholder="想買什麼？"
+      value="<%= search %>"
+    />
+    <button class="left" type="submit">搜尋</button>
+  </form>
+  <div id="mobile-menu-button" class="right mgvt-12 mobile-mghr-10">
+    <i class="fas fa-bars ftsz-30"></i>
+    <i class="fas fa-times ftsz-30"></i>
+  </div>
+  <nav class="right mobile-row">
+    <ul class="left sk-1st mgvt-12 mghr-20 mobile-mghr-10">
+<$ if ([2, 3, 5, 6].includes(prj)) { $>
+      <% if (user) { %>
+      <li class="left mglt-20 hv-wrapper<% if (page === 'cart') { %> bdbt-pink<% } %>">
+        <a class="ps-rl" <$ if ([2, 3].includes(prj)) { $>href="cart-loggedin.html"<$ } else if ([5, 6].includes(prj)) { $>href="cart"<$ } $>>
+          <i class="fas fa-shopping-cart ftsz-30 cl-black"></i>
+          <span<$ if ([3, 5, 6].includes(prj)) { $> js-dom="nav-total-qty"<$ } $> class="ps-ab tp-n5 rt-n10 ftsz-12 circle center bg-pink cl-white size-25 lnht-25"
+          >
+            <%= user.totalQty %>  
+          </span>
+        </a>
+      </li>
+      <% } %>
+<$ } $>
+      <li
+        class="left mglt-20<% if (page === 'fashion') { %> bdbt-pink<% } %>"
+      >
+<$ if ([2, 3].includes(prj)) { $>
+  <% if (user) { %>
+        <a href="fashion-loggedin.html">時尚流行</a>
+  <% } else { %>
+        <a href="fashion.html">時尚流行</a>
+  <% } %>
+<$ } else if ([4, 5, 6].includes(prj)) { $>
+        <a href="fashion">時尚流行</a>
+<$ } $>
+      </li>
+      <li class="left mglt-20<% if (page === 'food') { %> bdbt-pink<% } %>">
+<$ if ([2, 3].includes(prj)) { $>
+  <% if (user) { %>
+        <a href="food-loggedin.html">美食饗宴</a>
+  <% } else { %>
+        <a href="food.html">美食饗宴</a>
+  <% } %>
+<$ } else if ([4, 5, 6].includes(prj)) { $>
+        <a href="food">美食饗宴</a>
+<$ } $>
+      </li>
+<$ if ([2, 3].includes(prj)) { $>
+      <% if (user) { %>
+      <li class="left mglt-20">
+        <a href="index.html" title="<%= user.account %>">登出</a>
+      </li>
+      <% } else { %>
+      <li class="left mglt-20<% if (page === 'member') { %> bdbt-pink<% } %>">
+        <a href="member.html">登入&nbsp;|&nbsp;註冊</a>
+      </li>
+      <% } %>
+<$ } else if ([5, 6].includes(prj)) { $>
+      <% if (user) { %>
+      <li class="left mglt-20">
+        <a href="logout" title="<%= user.account %>">登出</a>
+      </li>
+      <% } else { %>
+      <li class="left mglt-20<% if (page === 'member') { %> bdbt-pink<% } %>">
+        <a href="member">登入&nbsp;|&nbsp;註冊</a>
+      </li>
+      <% } %>
+<$ } else if ([4].includes(prj)) { $>
+      <li class="left mglt-20<% if (page === 'member') { %> bdbt-pink<% } %>">
+        <a href="member">登入&nbsp;|&nbsp;註冊</a>
+      </li>
+<$ } $>
+    </ul>
+  </nav>
+</header>

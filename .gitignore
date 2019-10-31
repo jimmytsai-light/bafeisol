@@ -1,0 +1,9 @@
+# Some common files on Linux / Max OSX system
+.DS_Store
+*.tmp
+*.swap
+__MACOSX/
+
+# Node 3rd party modules
+**/node_modules/*
+src/output/*

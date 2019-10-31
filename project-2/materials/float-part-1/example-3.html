@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>範例3</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      padding: 20px 80px;
+    }
+    div {
+      border: 10px solid purple;
+    }
+    p {
+      background: yellow;
+
+      /*width: 100%*/ /* <img>必須在<p>裡面而且是第1個子元素 */
+      /*float: left;*/ /* <img>必須在<p>裡面而且是第1個子元素 */
+    }
+    footer {
+      background: lawngreen;
+
+      /*clear: left;*/
+      /*clear: right;*/
+      /*clear: both;*/
+    }
+    .left {
+      float: left;
+    }
+    .right {
+      float: right;
+    }
+    /*
+      Quiz 7. 將<img class="right">的註解取消後，<footer>現在被左右2張圖遮住，如果不想讓<footer>被遮住，猜猜看clear的值要設成left 或者 right 或者 both 呢？
+     */
+  </style>
+</head>
+<body>
+  <div>
+    <img class="left" src="oat.jpg">
+    <!-- <img class="right" src="burger.jpg"> -->
+    <p>
+      這是食物介紹，這是食物介紹，這是食物介紹，這是食物介紹，這是食物介紹，這是食物介紹，這是食物介紹，這是食物介紹，這是食物介紹，這是食物介紹。
+    </p>
+    <footer>
+      介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住，介紹完畢，我不想被遮住。
+    </footer>
+  </div>
+</body>
+</html>
+
+
+

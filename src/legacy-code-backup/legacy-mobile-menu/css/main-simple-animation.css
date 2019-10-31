@@ -1,0 +1,15 @@
+@media screen and (max-width: 414px) {
+  /* iPhone 6/7/8 & plus, Pixel, Galaxy S5 */
+  nav {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
+  }
+
+  nav.active {
+    height: 62px;
+    overflow: auto;
+    transition: height 0.3s;
+    border-top: 1px solid #eeeeee;
+  }
+}

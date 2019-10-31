@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>光速買</title>
+    <link rel="stylesheet" type="text/css" href="css/all.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
+  <body>
+    <header class="row sh-lg">
+      <form
+        class="left pdvt-12 pdlt-20 mobile-pdlt-10"
+        method="get"
+        action="search"
+      >
+        <h1 class="left mobile-ftsz-20">
+          <a href="index-loggedin.html">光速買</a>
+        </h1>
+        <input
+          class="left mglt-20 mobile-mglt-5 mobile-wd-170"
+          type="text"
+          name="q"
+          placeholder="想買什麼？"
+          value=""
+        />
+        <button class="left" type="submit">搜尋</button>
+      </form>
+      <div id="mobile-menu-button" class="right mgvt-12 mobile-mghr-10">
+        <i class="fas fa-bars ftsz-30"></i>
+        <i class="fas fa-times ftsz-30"></i>
+      </div>
+      <nav class="right mobile-row">
+        <ul class="left sk-1st mgvt-12 mghr-20 mobile-mghr-10">
+          <li class="left mglt-20 hv-wrapper bdbt-pink">
+            <a class="ps-rl" href="cart-loggedin.html">
+              <i class="fas fa-shopping-cart ftsz-30 cl-black"></i>
+              <span
+                js-dom="nav-total-qty"
+                class="ps-ab tp-n5 rt-n10 ftsz-12 circle center bg-pink cl-white size-25 lnht-25"
+              >
+                12
+              </span>
+            </a>
+          </li>
+          <li class="left mglt-20">
+            <a href="fashion-loggedin.html">時尚流行</a>
+          </li>
+          <li class="left mglt-20">
+            <a href="food-loggedin.html">美食饗宴</a>
+          </li>
+          <li class="left mglt-20">
+            <a href="index.html" title="jimmy@a.com">登出</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="row mgtp-62">
+      <form
+        js-dom="contact"
+        class="row pdtp-20 pdhr-20 mobile-pdhr-10"
+        method="post"
+        action="payment"
+      >
+        <h2 class="row pdbt-15">我的購物車</h2>
+        <h3 class="row pdtp-15 bdtp-gray">訂單總計</h3>
+        <div class="row pdtp-15">
+          <label class="col-1-6">數量總計</label>
+          <p js-dom="main-total-qty" class="col-5-6 ftsz-30 ftwt-400">12</p>
+        </div>
+        <div class="row pdtp-15 pdbt-15">
+          <label class="col-1-6">金額總計 (NT$)</label>
+          <p js-dom="total-price" class="col-5-6 cl-pink ftsz-30 ftwt-400">
+            7500
+          </p>
+        </div>
+        <h3 class="row pdtp-15 bdtp-gray">聯絡人資訊</h3>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="name">姓名</label>
+          <input
+            js-dom="field"
+            class="col-1-4"
+            type="text"
+            name="name"
+            id="name"
+            required
+            value=""
+          />
+        </div>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="mobile">手機號碼</label>
+          <input
+            js-dom="field"
+            class="col-1-4"
+            type="text"
+            name="mobile"
+            id="mobile"
+            required
+            pattern="[0-9]{10}"
+            value=""
+          />
+        </div>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="email">電子信箱</label>
+          <input
+            js-dom="field"
+            class="col-1-2"
+            type="email"
+            name="email"
+            id="email"
+            required
+            value="jimmy@a.com"
+          />
+        </div>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="address">收貨地址</label>
+          <input
+            js-dom="field"
+            class="col-1-2"
+            type="text"
+            name="address"
+            id="address"
+            required
+            value=""
+          />
+        </div>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="card_zone1">信用卡號</label>
+          <input
+            js-dom="field"
+            class="left wd-66"
+            type="text"
+            name="card_zone1"
+            id="card_zone1"
+            required
+            pattern="[0-9]{4}"
+            value=""
+          />
+          <input
+            js-dom="field"
+            class="left wd-66 mglt-5"
+            type="text"
+            name="card_zone2"
+            id="card_zone2"
+            required
+            pattern="[0-9]{4}"
+            value=""
+          />
+          <input
+            js-dom="field"
+            class="left wd-66 mglt-5"
+            type="text"
+            name="card_zone3"
+            id="card_zone3"
+            required
+            pattern="[0-9]{4}"
+            value=""
+          />
+          <input
+            js-dom="field"
+            class="left wd-66 mglt-5"
+            type="text"
+            name="card_zone4"
+            id="card_zone4"
+            required
+            pattern="[0-9]{4}"
+            value=""
+          />
+        </div>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="card_sec">信用卡安全碼</label>
+          <input
+            js-dom="field"
+            class="left wd-66"
+            type="text"
+            name="card_sec"
+            id="card_sec"
+            required
+            pattern="[0-9]{3}"
+            value=""
+          />
+        </div>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="card_month">信用卡有效期限</label>
+          <input
+            js-dom="field"
+            class="left wd-66"
+            type="text"
+            name="card_month"
+            id="card_month"
+            placeholder="月份"
+            required
+            pattern="[0-9]{2}"
+            value=""
+          />
+          <input
+            js-dom="field"
+            class="left wd-66 mglt-5"
+            type="text"
+            name="card_year"
+            id="card_year"
+            placeholder="年份"
+            required
+            pattern="[0-9]{2}"
+            value=""
+          />
+        </div>
+        <div class="row pdtp-15 pdbt-15">
+          <button
+            js-dom="submit"
+            class="col-1-6 mglt-1-6 mobile-mglt-0"
+            type="submit"
+          >
+            確認付款
+          </button>
+        </div>
+      </form>
+      <div class="row pdhr-20 mobile-pdhr-10">
+        <h3 class="row pdtp-15 bdtp-gray">商品明細</h3>
+      </div>
+      <div class="row sk-1st pdtp-20 pdhr-20 pdbt-40 mobile-pd-10">
+        <div class="col-47-200 mglt-1-50 mobile-mglt-0">
+          <div js-dom="product" class="row mgtp-20 bg-white sh-md hvsh-wrapper">
+            <div class="ps-rl">
+              <img src="imgs/food/food1.jpg" />
+              <div
+                class="ps-ab trbl-0 bg-gray-ap hvsh-target cl-white mobile-ap-0 mobile-show"
+              >
+                <span
+                  js-dom="qty"
+                  class="ps-ab tp-55 rt-10 ftsz-30 size-40 center"
+                >
+                  5
+                </span>
+                <button
+                  js-dom="plus"
+                  class="ps-ab tp-10 rt-10 circle size-40 sh-lg"
+                >
+                  <i class="fas fa-plus"></i>
+                </button>
+                <button
+                  js-dom="minus"
+                  class="ps-ab tp-100 rt-10 circle size-40 sh-lg"
+                >
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="pd-12 one-line">
+              <p>香脆雞腿堡</p>
+              <p js-dom="price" class="ftwt-400">NT$100</p>
+              <p js-dom="id" class="pdbt-12">food1</p>
+              <p title="我是香脆雞腿堡，多汁美味又酥脆，大家都說讚！">
+                我是香脆雞腿堡，多汁美味又酥脆，大家都說讚！
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-47-200 mglt-1-50 mobile-mglt-0">
+          <div js-dom="product" class="row mgtp-20 bg-white sh-md hvsh-wrapper">
+            <div class="ps-rl">
+              <img src="imgs/fash/fash1.jpg" />
+              <div
+                class="ps-ab trbl-0 bg-gray-ap hvsh-target cl-white mobile-ap-0 mobile-show"
+              >
+                <span
+                  js-dom="qty"
+                  class="ps-ab tp-55 rt-10 ftsz-30 size-40 center"
+                >
+                  7
+                </span>
+                <button
+                  js-dom="plus"
+                  class="ps-ab tp-10 rt-10 circle size-40 sh-lg"
+                >
+                  <i class="fas fa-plus"></i>
+                </button>
+                <button
+                  js-dom="minus"
+                  class="ps-ab tp-100 rt-10 circle size-40 sh-lg"
+                >
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="pd-12 one-line">
+              <p>蕾絲洋裝</p>
+              <p js-dom="price" class="ftwt-400">NT$1000</p>
+              <p js-dom="id" class="pdbt-12">fash1</p>
+              <p title="我是蕾絲洋裝，優雅大方又好看，大家都說讚！">
+                我是蕾絲洋裝，優雅大方又好看，大家都說讚！
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-47-200 mglt-1-50 mobile-mglt-0"></div>
+        <div class="col-47-200 mglt-1-50 mobile-mglt-0"></div>
+      </div>
+    </main>
+    <script src="js/nav.js"></script>
+    <script>
+      var state = {
+        order: {
+          food1: { qty: 5, price: 100 },
+          fash1: { qty: 7, price: 1000 },
+        },
+      }
+      function getStateTotalQty() {
+        var res = 0
+        for (var id in state.order) {
+          res += state.order[id].qty
+        }
+        return res
+      }
+      function getStateTotalPrice() {
+        var res = 0
+        for (var id in state.order) {
+          res += state.order[id].price * state.order[id].qty
+        }
+        return res
+      }
+    </script>
+    <script src="js/order.js"></script>
+    <script src="js/contact.js"></script>
+  </body>
+</html>

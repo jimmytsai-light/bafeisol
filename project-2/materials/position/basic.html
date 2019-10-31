@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>basic</title>
+  <style>
+    /*
+    Summary:
+    1. 什麼時候要用position？
+       Ans: 當你想讓元素出現在特定的位置時，你就需要用position。
+
+    2. position的設定值有5種，分別是：
+       (1) static：是瀏覽器對所有元素的預設值，代表瀏覽器會用flow的方式 (瀏覽器預設的排版方式) 來決定元素在網頁上的位置。所以將元素的position設為static，其實就相當於沒有做任何position的設定。
+       (2) fixed
+       (3) relative
+       (4) absolute
+       (5) sticky
+
+    3. positioned vs non-positioned：
+       (1) 如果一個元素的position被設為fixed、relative、absolute、或sticky，那我們就說這個元素是一個"有定位"的元素，英文叫做positioned element。
+       (2) 如果一個元素的position被設成static (或者沒有任何設定)，那我們就說這個元素是一個"無定位"的元素，英文叫做non-positioned element。
+
+    4. 和position設定有關的另外5個CSS屬性是top、right、bottom、left、以及z-index，但這5個屬性在position被設為static的時候，會沒有任何作用。
+
+    5. inline/inline-block、或者block元素，這3者的position一旦被設為fixed或者absolute，則它們在尺寸設定上的行為，會變得一模一樣，都會遵循以下3點：
+       (1) 在沒有設定寬度和高度的情況下，元素大小由內容決定。
+       (2) 若對它們設定寬度(width)和高度(height)，都會有作用。
+       (3) 我們也可以透過top、right、bottom、以及left來設定它們的大小 (本範例檔案不DEMO這點，留待其他的範例來DEMO)
+    */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    span {
+      /*position: fixed;*/
+      /*position: absolute;*/
+      /*position: relative;*/
+      /*position: sticky;*/
+      background: yellow;
+      width: 500px;
+      height: 300px;
+    }
+    div {
+      /*position: fixed;*/
+      /*position: absolute;*/
+      /*position: relative;*/
+      /*position: sticky;*/
+      background: aqua;
+    }
+  </style>
+</head>
+<body>
+  <span>Hello</span>
+  <!-- <div>World</div> -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
