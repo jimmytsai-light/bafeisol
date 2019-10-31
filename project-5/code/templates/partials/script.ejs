@@ -1,0 +1,17 @@
+<script>
+  var state = <%- JSON.stringify(user.initState) %>
+  function getStateTotalQty() {
+    var res = 0
+    for (var id in state.order) {
+      res += state.order[id].qty
+    }
+    return res
+  }
+  function getStateTotalPrice() {
+    var res = 0
+    for (var id in state.order) {
+      res +=  state.order[id].price * state.order[id].qty
+    }
+    return res
+  }
+</script>

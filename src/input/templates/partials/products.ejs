@@ -1,0 +1,40 @@
+<div class="row sk-1st pdtp-20 pdhr-20 pdbt-40 mobile-pd-10">
+  <% for (var i = 0; i < cols.length; i++) { %>
+  <div class="col-47-200 mglt-1-50 mobile-mglt-0">
+    <% var products = cols[i] %>
+    <% for (var j = 0; j < products.length; j++) { %>
+    <%   var prd = products[j] %>
+    <div<$ if ([3, 4, 5, 6].includes(prj)) { $> js-dom="product"<$ } $> class="row mgtp-20 bg-white sh-md<% if (user) { %> hvsh-wrapper<% } %>">
+      <div class="ps-rl">
+        <img src="imgs/<%= prd.src %>">
+<$ if ([2, 3, 5, 6].includes(prj)) { $>
+        <% if (user) { %>
+        <% var current = user.initState.order[prd.id] %>
+        <% var qty = current ? current.qty : 0 %>
+        <div class="ps-ab trbl-0 bg-gray-ap hvsh-target cl-white mobile-ap-0 mobile-show">
+          <span<$ if ([3, 4, 5, 6].includes(prj)) { $> js-dom="qty"<$ } $> class="ps-ab tp-55 rt-10 ftsz-30 size-40 center">
+            <%= qty %>
+          </span>
+          <button<$ if ([3, 4, 5, 6].includes(prj)) { $> js-dom="plus"<$ } $> class="ps-ab tp-10 rt-10 circle size-40 sh-lg">
+            <i class="fas fa-plus"></i>
+          </button>
+          <button<$ if ([3, 4, 5, 6].includes(prj)) { $> js-dom="minus"<$ } $> class="ps-ab tp-100 rt-10 circle size-40 sh-lg">
+            <i class="fas fa-minus"></i>
+          </button>
+        </div>
+        <% } %>
+<$ } $>
+      </div>
+      <div class="pd-12 one-line">
+        <p><%= prd.title %></p>
+        <p<$ if ([3, 4, 5, 6].includes(prj)) { $> js-dom="price"<$ } $> class="ftwt-400">NT$<%= prd.price %></p>
+        <p<$ if ([3, 4, 5, 6].includes(prj)) { $> js-dom="id"<$ } $> class="pdbt-12"><%= prd.id %></p>
+        <p title="<%= prd.description %>">
+          <%= prd.description %>
+        </p>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <% } %>
+</div>

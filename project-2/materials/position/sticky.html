@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>position-sticky</title>
+  <style>
+    /*
+    Summary:
+    sticky = relative + fixed，會在捲動時有作用。position為sticky的元素，會以離它最近的可捲動祖先元素(nearest scrolling ancestor)為基準來定位。
+    */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      padding: 40px 0 0 200px;
+    }
+
+    /*
+    overflow-x / overflow-y / overflow:
+    當元素的內容比元素本身還要大時，就可以用overflow-x，overflow-y，或overflow，來決定超出範圍的內容，要如何呈現。其中overflow-x代表水平方向，overflow-y代表垂直方向，至於overflow則代表同時設定兩個方向。
+
+    overflow的設定值有4種，分別是visible，auto，scroll，hidden。
+    (1) visible: 直接顯示超出範圍的內容。
+    (2) auto: 以捲軸顯示超出範圍的內容。
+    (3) scroll: 類似auto，在windows上才有些微差異。
+    (4) hidden: 隱藏超出範圍的內容。
+    那瀏覽器對於overflow-x和y的預設值都是visible。
+
+    要注意的是，visible有作用的前提是x和y都要設成visible，若x或y中只有1個方向被設成visible，則被設成visible的方向，會被自動轉成auto。
+     */
+    div {
+      /*overflow-x: visible;*/ /*瀏覽器預設值*/
+      /*overflow-y: visible;*/ /*瀏覽器預設值*/
+
+      /*overflow-x: auto;*/ /*以水平捲軸顯示超出寬度的內容*/
+      /*overflow-y: auto;*/ /*以垂直捲軸顯示超出高度的內容*/
+
+      /*overflow-x: scroll;*/ /*類似auto，在windows上才有些微差異。*/
+      /*overflow-y: scroll;*/ /*類似auto，在windows上才有些微差異。*/
+      
+      /*overflow-x: hidden;*/ /* 隱藏水平方向超出範圍的內容 */
+      /*overflow-y: hidden;*/ /* 隱藏垂直方向超出範圍的內容 */
+      
+      /*overflow: auto;*/ /*一次設定2個方向為auto*/
+      /*overflow: hidden;*/ /*一次設定2個方向為hidden*/
+
+      width: 200px;
+      height: 400px;
+      border: 3px solid purple;
+    }
+
+    header {
+      /*position: sticky;*/
+      /*top: 30px;*/
+      background: limegreen;
+      width: 150px;
+      height: 100px;
+    }
+    p {
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <!-- <p>
+      我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素。
+    </p> -->
+    <!-- <header></header> -->
+    <p>
+      我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素，我是無定位元素。
+    </p>
+  </div>
+</body>
+</html>

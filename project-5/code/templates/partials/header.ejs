@@ -1,0 +1,51 @@
+<header class="row sh-lg">
+  <form class="left pdvt-12 pdlt-20 mobile-pdlt-10" method="get" action="search">
+    <h1 class="left mobile-ftsz-20">
+      <a href="/">光速買</a>
+    </h1>
+    <input
+      class="left mglt-20 mobile-mglt-5 mobile-wd-170"
+      type="text"
+      name="q"
+      placeholder="想買什麼？"
+      value="<%= search %>"
+    />
+    <button class="left" type="submit">搜尋</button>
+  </form>
+  <div id="mobile-menu-button" class="right mgvt-12 mobile-mghr-10">
+    <i class="fas fa-bars ftsz-30"></i>
+    <i class="fas fa-times ftsz-30"></i>
+  </div>
+  <nav class="right mobile-row">
+    <ul class="left sk-1st mgvt-12 mghr-20 mobile-mghr-10">
+      <% if (user) { %>
+      <li class="left mglt-20 hv-wrapper<% if (page === 'cart') { %> bdbt-pink<% } %>">
+        <a class="ps-rl" href="cart">
+          <i class="fas fa-shopping-cart ftsz-30 cl-black"></i>
+          <span js-dom="nav-total-qty" class="ps-ab tp-n5 rt-n10 ftsz-12 circle center bg-pink cl-white size-25 lnht-25"
+          >
+            <%= user.totalQty %>
+          </span>
+        </a>
+      </li>
+      <% } %>
+      <li
+        class="left mglt-20<% if (page === 'fashion') { %> bdbt-pink<% } %>"
+      >
+        <a href="fashion">時尚流行</a>
+      </li>
+      <li class="left mglt-20<% if (page === 'food') { %> bdbt-pink<% } %>">
+        <a href="food">美食饗宴</a>
+      </li>
+      <% if (user) { %>
+      <li class="left mglt-20">
+        <a href="logout" title="<%= user.account %>">登出</a>
+      </li>
+      <% } else { %>
+      <li class="left mglt-20<% if (page === 'member') { %> bdbt-pink<% } %>">
+        <a href="member">登入&nbsp;|&nbsp;註冊</a>
+      </li>
+      <% } %>
+    </ul>
+  </nav>
+</header>

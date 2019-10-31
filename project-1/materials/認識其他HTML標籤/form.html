@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { margin: 0; padding: 30px; }
+    h4 { margin: 0; padding: 0; font-size: 16px; font-weight: 400; }
+  </style>
+</head>
+<body>
+  <form>
+    <h4>我是form，嚴格來說是整個表單的外皮。</h4>
+    <br>
+    <label>請輸入姓名:</label>
+    <input type="text" name="my_name" value="jimmy" placeholder="請輸入姓名">
+    <br>
+    <br>
+    <label>請輸入密碼:</label>
+    <input type="password" name="my_password" placeholder="請輸入密碼">
+    <br>
+    <br>
+    <label>請輸入email:</label>
+    <input type="email" name="my_email" placeholder="例如: abc@gmail.com">
+    <br>
+    <br>
+    <label>請選擇要上傳的檔案:</label>
+    <input type="file" name="my_file">
+    <br>
+    <br>
+    <label>請選擇您喜歡的顏色（可複選）:</label>
+    <input type="checkbox" name="color" value="red">紅色
+    <input type="checkbox" name="color" value="green">綠色
+    <input type="checkbox" name="color" value="blue">藍色
+    <br>
+    <br>
+    <label>請選擇您的年齡區間:</label>
+    <input type="radio" name="age" value="0_to_18">18歲以下
+    <input type="radio" name="age" value="19_to_40">19 ~ 40歲
+    <input type="radio" name="age" value="41_and_above">41歲以上
+    <br>
+    <br>
+    <label>請選擇您的交通工具:</label>
+    <select name="transportation">
+      <option value="walk">步行</option>
+      <option value="scooter">機車</option>
+      <option value="car">汽車</option>
+      <option value="bus">公車</option>
+      <option value="mrt">捷運</option>
+      <option value="airplane">飛機</option>
+    </select>
+    <br>
+    <br>
+    <label>請留下您寶貴的建議:</label>
+    <br>
+    <textarea name="suggestion">我是textarea，用來輸入比較長的一段文字</textarea>
+    <br>
+    <br>
+    <button type="submit">我是button，代表按鈕</button>
+    <br>
+    <br>
+    <input type="submit" value="我也是個button">
+  </form>
+</body>
+</html>

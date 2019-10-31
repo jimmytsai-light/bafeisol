@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <%- include('partials/head.ejs') %>
+  <body>
+    <%- include('partials/header.ejs') %>
+    <main class="row mgtp-62">
+      <form js-dom="contact" class="row pdtp-20 pdhr-20 mobile-pdhr-10" method="post" action="payment">
+        <h2 class="row pdbt-15">我的購物車</h2>
+        <h3 class="row pdtp-15 bdtp-gray">訂單總計</h3>
+        <div class="row pdtp-15">
+          <label class="col-1-6">數量總計</label>
+          <p js-dom="main-total-qty" class="col-5-6 ftsz-30 ftwt-400"><%= user.totalQty %></p>
+        </div>
+        <div class="row pdtp-15 pdbt-15">
+          <label class="col-1-6">金額總計 (NT$)</label>
+          <p js-dom="total-price" class="col-5-6 cl-pink ftsz-30 ftwt-400"><%= user.totalPrice %></p>
+        </div>
+        <h3 class="row pdtp-15 bdtp-gray">聯絡人資訊</h3>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="name">姓名</label>
+          <input js-dom="field" class="col-1-4" type="text" name="name" id="name" required value="<%= form.name %>">
+        </div>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="mobile">手機號碼</label>
+          <input js-dom="field" class="col-1-4" type="text" name="mobile" id="mobile" required pattern="[0-9]{10}" value="<%= form.mobile %>">
+        </div>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="email">電子信箱</label>
+          <input js-dom="field" class="col-1-2" type="email" name="email" id="email" required value="<%= form.email %>">
+        </div>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="address">收貨地址</label>
+          <input js-dom="field" class="col-1-2" type="text" name="address" id="address" required value="<%= form.address %>">
+        </div>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="card_zone1">信用卡號</label>
+          <input js-dom="field" class="left wd-66" type="text" name="card_zone1" id="card_zone1" required pattern="[0-9]{4}" value="<%= form.card_zone1 %>">
+          <input js-dom="field" class="left wd-66 mglt-5" type="text" name="card_zone2" id="card_zone2" required pattern="[0-9]{4}" value="<%= form.card_zone2 %>">
+          <input js-dom="field" class="left wd-66 mglt-5" type="text" name="card_zone3" id="card_zone3" required pattern="[0-9]{4}" value="<%= form.card_zone3 %>">
+          <input js-dom="field" class="left wd-66 mglt-5" type="text" name="card_zone4" id="card_zone4" required pattern="[0-9]{4}" value="<%= form.card_zone4 %>">
+        </div>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="card_sec">信用卡安全碼</label>
+          <input js-dom="field" class="left wd-66" type="text" name="card_sec" id="card_sec" required pattern="[0-9]{3}" value="<%= form.card_sec %>">
+        </div>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="card_month">信用卡有效期限</label>
+          <input js-dom="field" class="left wd-66" type="text" name="card_month" id="card_month" placeholder="月份" required pattern="[0-9]{2}" value="<%= form.card_month %>">
+          <input js-dom="field" class="left wd-66 mglt-5" type="text" name="card_year" id="card_year" placeholder="年份" required pattern="[0-9]{2}" value="<%= form.card_year %>">
+        </div>
+        <div class="row pdtp-15 pdbt-15">
+          <button js-dom="submit" class="col-1-6 mglt-1-6 mobile-mglt-0" type="submit">確認付款</button>
+        </div>
+      </form>
+      <% if (cols[0].length !== 0) { %>
+      <div class="row pdhr-20 mobile-pdhr-10">
+        <h3 class="row pdtp-15 bdtp-gray">商品明細</h3>
+      </div>
+      <%- include('partials/products.ejs') %>
+      <% } %>
+    </main>
+    <script src="js/nav.js"></script>
+    <%- include('partials/script.ejs') %>
+    <script src="js/request.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/contact.js"></script>
+    <%- include('partials/warning-script.ejs') %>
+  </body>
+</html>

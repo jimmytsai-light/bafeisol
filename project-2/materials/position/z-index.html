@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>z-index</title>
+  <style>
+    /*
+    Summary:
+    1. 當你想客製化元素覆蓋的順序，你就需要使用z-index。簡單來說，z-index比較大的元素，會蓋在z-index比較小的元素的上面。
+
+    2. z-index的設定只會對"有定位" (fixed、relative、absolute、或sticky) 的元素有效果。為了方便起見，本範例都以"position: fixed"來示範。
+
+    3. z-index的值可以是auto或整數 (負整數, 0, 正整數)。若元素有定位，但卻沒有設定z-index，則瀏覽器會將它的z-index值，預設成auto，在本範例中，你暫時可以將"auto"和"0"看成同一件事，因此有定位但卻沒有設定z-index的元素，可以看成它的z-index為0。至於"auto"和"0"的差異，會在stacking context的範例中，才會詳細說明。
+
+    4. z-index顯然定義了"圖層" (layer) 的概念，你看到的網頁畫面，其實是由一層一層的layer疊加後的結果，z-index其實就是layer的編號，編號越大，代表元素所在的圖層越高，較高的圖層會將較低的圖層(編號較小的圖層)蓋過去 ( 2 > 1 > 0 > -1 > -2 )。若有一群元素的z-index值都一樣 (例如都設為1，也就是說它們都被render在第1層)，則覆蓋的順序，就用HTML程式碼中的順序決定，順序比較後面的元素，會蓋過順序比較前面的元素。
+
+    5. Sibling元素彼此之間覆蓋原則：
+      (1) 無定位的元素，可以視為被畫在第0層 (z-index = 0)
+      (2) 有定位且z-index小於0的元素，會被無定位元素覆蓋。
+      (3) 無定位元素會被有定位且z-index大於等於0的元素覆蓋。
+      (4) z-index比較大的有定位元素，會蓋在z-index比較小的有定位元素的上面。
+      (5) 若z-index一樣，則覆蓋的順序，就用HTML程式碼中的撰寫順序決定，順序比較後面的元素，會蓋過順序比較前面的元素
+    */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    h1, p {
+      width: 250px;
+      height: 150px;
+    }
+    
+    h1 {
+      position: fixed;
+      /*z-index: 2;*/
+      top: 100px;
+      left: 140px;
+      background: gold;
+    }
+    div {
+      position: fixed;
+      z-index: 0;
+      width: 410px;
+      height: 210px;
+      background: violet;
+    }
+    p {
+      position: fixed;
+      /*z-index: 2;*/
+      top: 140px;
+      left: 180px;
+      background: limegreen;
+    }
+  </style>
+</head>
+<body>
+  <h1></h1>
+  <!-- <div></div> -->
+  <p></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

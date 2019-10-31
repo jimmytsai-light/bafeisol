@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>光速買</title>
+    <link rel="stylesheet" type="text/css" href="css/all.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
+  <body>
+    <header class="row sh-lg">
+      <form
+        class="left pdvt-12 pdlt-20 mobile-pdlt-10"
+        method="get"
+        action="search"
+      >
+        <h1 class="left mobile-ftsz-20">
+          <a href="index.html">光速買</a>
+        </h1>
+        <input
+          class="left mglt-20 mobile-mglt-5 mobile-wd-170"
+          type="text"
+          name="q"
+          placeholder="想買什麼？"
+          value=""
+        />
+        <button class="left" type="submit">搜尋</button>
+      </form>
+      <div id="mobile-menu-button" class="right mgvt-12 mobile-mghr-10">
+        <i class="fas fa-bars ftsz-30"></i>
+        <i class="fas fa-times ftsz-30"></i>
+      </div>
+      <nav class="right mobile-row">
+        <ul class="left sk-1st mgvt-12 mghr-20 mobile-mghr-10">
+          <li class="left mglt-20">
+            <a href="fashion.html">時尚流行</a>
+          </li>
+          <li class="left mglt-20">
+            <a href="food.html">美食饗宴</a>
+          </li>
+          <li class="left mglt-20 bdbt-pink">
+            <a href="member.html">登入&nbsp;|&nbsp;註冊</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="row mgtp-62">
+      <form class="row pdtp-20 pdhr-20 mobile-pdhr-10" method="post">
+        <h2 class="row pdbt-15">會員登入&nbsp;|&nbsp;註冊</h2>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="account">帳號</label>
+          <input
+            class="col-1-4"
+            type="email"
+            name="account"
+            id="account"
+            placeholder="請輸入email"
+            required
+          />
+        </div>
+        <div class="row pdtp-15">
+          <label class="col-1-6" for="password">密碼</label>
+          <input
+            class="col-1-4"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="請輸入8 ~ 32位英數密碼"
+            required
+            pattern="[0-9a-zA-Z]{8,32}"
+          />
+        </div>
+        <div class="row pdtp-15">
+          <button class="col-1-4 mglt-1-6 mobile-mglt-0" type="submit">
+            登入
+          </button>
+        </div>
+        <div class="row pdtp-15">
+          <button class="col-1-4 mglt-1-6 bg-blue mobile-mglt-0" type="submit">
+            註冊
+          </button>
+        </div>
+      </form>
+    </main>
+    <script src="js/nav.js"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ejs": "ejs",
+    "ejslint": "ejslint",
+    "prt": "prettier",
+    "prt-w": "prettier --config ./.prettierrc.js --write",
+    "prt-w-2": "prettier --config ./.prettierrc.js --write ../project-2/**/*.html ../project-2/**/*.js",
+    "prt-w-3": "prettier --config ./.prettierrc.js --write ../project-3/**/*.html ../project-3/**/*.js",
+    "prt-w-4": "prettier --config ./.prettierrc.js --write ../project-4/**/*.js",
+    "prt-w-5": "prettier --config ./.prettierrc.js --write ../project-5/**/*.js",
+    "prt-w-6": "prettier --config ./.prettierrc.js --write ../project-6/**/*.js",
+    "build-2": "node build-projects.js 2; npm run prt-w-2",
+    "build-3": "node build-projects.js 3; npm run prt-w-3",
+    "build-4": "node build-projects.js 4; npm run prt-w-4",
+    "build-5": "node build-projects.js 5; npm run prt-w-5",
+    "build-6": "node build-projects.js 6; npm run prt-w-6",
+    "build-23": "npm run build-2; npm run build-3",
+    "build-456": "npm run build-4; npm run build-5; npm run build-6",
+    "build-all": "npm run build-23; npm run build-456",
+    "prt-w-23": "npm run prt-w-2; npm run prt-w-3",
+    "prt-w-456": "npm run prt-w-4; npm run prt-w-5; npm run prt-w-6",
+    "prt-w-all": "npm run prt-w-23; npm run prt-w-456",
+    "purifycss": "purifycss"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "ejs-lint": "^1.0.1"
+  },
+  "devDependencies": {
+    "prettier": "1.19.1",
+    "purify-css": "^1.2.5",
+    "shelljs": "^0.8.3"
+  }
+}

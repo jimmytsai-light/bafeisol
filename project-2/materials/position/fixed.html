@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>position-fixed</title>
+  <style>
+    /*
+    Summary:
+    1. position為fixed的元素，會以viewport的4個邊界作為基準來定位，並且可以用top、left、bottom、right這4個CSS屬性來決定元素到4個邊界的距離。那什麼是viewport？viewport就是瀏覽器視窗中顯示網頁畫面的範圍。
+    
+    2. top、left、bottom、和right的設定值，若是正數，代表移動方向往viewport的裡面；若是負數，代表移動方向往viewport的外面。
+
+    3. position為fixed的元素，它的位置不會影響其他元素的位置 (其他元素也不會影響它)，它的母元素在計算大小時，也不會將它納入考量。因此，它也是脫離了flow (out of flow / removed from the flow)。
+
+    4. position為fixed的元素，若完全沒有設定top、left、bottom、或者right，則瀏覽器會用"auto"作為預設值。"auto"的意思是說，瀏覽器會依當下的情境自動算出top和left，但top和left的值是多少，完全取決於當下的情境。所以通常建議垂直方向(top或bottom)一定要設定1個值，然後水平方向(left或right)也一定要設定1個值，才能確保元素的位置完全是你想要的 (別把命運交給瀏覽器)。
+
+    5. 若有多個position為fixed的元素，假設它們佔據的範圍有重疊到，則在HTML程式碼中順序比較後面的元素，會蓋在順序比較前面的元素的上面。
+    */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      /*padding: 200px 0 0 300px;*/
+    }
+    div, p {
+      width: 200px;
+      height: 80px;
+    }
+    div {
+      background: gold;
+      position: fixed;
+      top: 100px;
+      left: 120px;
+      /*bottom: 140px;*/
+      /*right: 160px;*/
+      /*position: static;*/
+      /*margin: 50px 0 0 50px;*/
+    }
+    p {
+      background: limegreen;
+      position: fixed;
+      top: 130px;
+      left: 150px;
+    }
+    h1 {
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <!-- <p></p> -->
+  <h1>我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素，我是無定位的元素。</h1>
+</body>
+</html>
+
+
+
+
+
+
+
+

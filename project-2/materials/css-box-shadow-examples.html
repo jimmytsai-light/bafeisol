@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>box-shadow examples</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        padding: 50px 80px 300px 80px;
+        margin: 0;
+        float: left;
+      }
+      h1 {
+        margin: 0 0 20px 0;
+      }
+      .wrapper {
+        display: block;
+        float: left;
+        width: 50%;
+        margin: 0 0 100px 0;
+      }
+      .square {
+        display: block;
+        width: 400px;
+        height: 225px;
+        background: yellow;
+        font-size: 20px;
+        line-height: 225px;
+        text-align: center;
+      }
+      .left-shadow {
+        box-shadow: -40px 0 0 0 #666;
+      }
+      .right-shadow {
+        box-shadow: 40px 0 0 0 #666;
+      }
+      .top-shadow {
+        box-shadow: 0 -40px 0 0 #666;
+      }
+      .bottom-shadow {
+        box-shadow: 0 40px 0 0 #666;
+      }
+      .bottom-blur-shadow {
+        box-shadow: 0 40px 30px 0 #666;
+      }
+      .bottom-spread-shadow {
+        box-shadow: 0 40px 0 30px #666;
+      }
+      .right-bottom-blur-shadow {
+        box-shadow: 60px 40px 30px 0 #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Left Shadow:</h1>
+      <div class="square left-shadow">box-shadow: -40px 0 0 0 #666;</div>
+    </div>
+
+    <div class="wrapper">
+      <h1>Right Shadow:</h1>
+      <div class="square right-shadow">box-shadow: 40px 0 0 0 #666;</div>
+    </div>
+
+    <div class="wrapper">
+      <h1>Top Shadow:</h1>
+      <div class="square top-shadow">box-shadow: 0 -40px 0 0 #666;</div>
+    </div>
+
+    <div class="wrapper">
+      <h1>Bottom Shadow:</h1>
+      <div class="square bottom-shadow">box-shadow: 0 40px 0 0 #666;</div>
+    </div>
+
+    <div class="wrapper">
+      <h1>Bottom Shadow:</h1>
+      <div class="square bottom-shadow">box-shadow: 0 40px 0 0 #666;</div>
+    </div>
+
+    <div class="wrapper">
+      <h1>Bottom & Blur Shadow:</h1>
+      <div class="square bottom-blur-shadow">
+        box-shadow: 0 40px 30px 0 #666;
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <h1>Bottom Shadow:</h1>
+      <div class="square bottom-shadow">box-shadow: 0 40px 0 0 #666;</div>
+    </div>
+
+    <div class="wrapper">
+      <h1>Bottom & Spread Shadow:</h1>
+      <div class="square bottom-spread-shadow">
+        box-shadow: 0 40px 0 30px #666;
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <h1>Right & Bottom & Blur Shadow:</h1>
+      <div class="square right-bottom-blur-shadow">
+        box-shadow: 60px 40px 30px 0 #666;
+      </div>
+    </div>
+  </body>
+</html>
